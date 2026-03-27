@@ -1460,7 +1460,7 @@ class MetingPlugin(Star):
         safe_sender_id = "".join(c for c in str(sender_id) if c.isalnum() or c in "._-")
 
         download_success = False
-        max_retries = 3
+        max_retries = 2
         retry_count = 0
         temp_file = None
         detected_format = None
