@@ -112,7 +112,10 @@
 - **默认**：`https://musicapi.chuyel.top/meting/`
 
 **MetingAPI** 以上可選值API 不保證會一直有效
-若未來 某API停用了停運了 還請自己更替到自定義API 也就是要嗎指向你自己架的MetingAPI
+
+若未來 某API停用了停運了 還請自己更替到自定義API
+
+也就是要嗎指向你自己架的MetingAPI
 
 
 **API 类型**（仅在 API 地址为 custom 时生效）
