@@ -46,8 +46,9 @@
 **API 地址**
 - **描述**：选择你適合的 MetingAPI 或自定义
 - **可选值**：
+  - `https://musicapi.chuyel/api/` - 某人的API 注意⚠️此Meting不保證有ㄒㄧㄤˋ
   - `custom` - 自定义 API
-- **默认**：`https://localhost/meting/`
+- **默认**：`https://musicapi.chuyel/api/`
 
 **MetingAPI** 由於此分支項目屬於個人使用範疇
 API還請自己處理 這裡就不再包含API預設了
