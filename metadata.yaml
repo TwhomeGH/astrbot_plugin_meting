@@ -1,5 +1,5 @@
 name: astrbot_plugin_meting
-display_name: 初叶🍂MetingAPI 点歌
+display_name: 通用 MetingAPI 点歌
 desc: 這是基於原版本的額外分支版本 基于 MetingAPI 的点歌插件，自定义API地址，支持QQ音乐、网易云、酷狗、酷我音源
 version: v1.1.0
 author: Nuclear0709
