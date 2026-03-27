@@ -1632,7 +1632,7 @@ class MetingPlugin(Star):
             export_file_type = self._get_config("export_file_type",default="wav")
 
             logger.info(f"Exporting audio segment to file: {segment_file}")
-            segment.export(segment_file, format=export_file_type, parameters=["-q:a", "2"])
+            segment.export(segment_file, format=export_file_type, parameters=["-q:a", "3"])
             # 稍微压缩以便满足文件大小限制（通过 export 参数实现）
 
             return True
