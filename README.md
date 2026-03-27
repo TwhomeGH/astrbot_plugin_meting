@@ -1,6 +1,63 @@
-# 初叶🍂 MetingAPI 点歌插件
+# 多平台通用 MetingAPI
 
-基于 MetingAPI 的点歌插件，支持QQ音乐、网易云、酷狗、酷我等音源。
+本項目基於：[初叶🍂 MetingAPI 点歌插件](https://github.com/chuyegzs/astrbot_plugin_meting)
+
+基于 MetingAPI 的点歌插件，支持QQ音乐、网易云、酷狗、酷我等音源
+
+> [!TIP]
+> 本項目的開發是以通用設計為主
+> 未來會改進處理方式
+
+# 開發計劃 To-Do List
+
+## 1. 記憶體處理優化
+- 不再下載並產生本地緩存檔案。
+- 所有音訊資料直接保存在 **記憶體 (Memory)** 中處理。
+- 避免任何磁盤 I/O 讀寫操作。
+- 減少磁盤壽命消耗與不必要的資源占用。
+
+## 2. 直傳 API 最終網址
+- 提供用戶選項：  
+  **不進行下載與轉碼處理**。
+- 插件僅回傳 API 提供的 **最終音訊網址**。
+- 插件不參與：
+  - 下載
+  - 上傳
+  - 暫存處理
+- 解決問題：
+  - 浪費磁盤 I/O
+  - 浪費上傳帶寬
+
+## 3. 可選轉碼與壓縮功能
+- 提供音訊轉碼與壓縮參數配置：
+  - Bitrate
+  - Codec
+  - 音訊品質設定
+- 讓最終發送的語音訊息：
+  - 檔案更小
+  - 更節省流量
+  - 更適合傳送
+
+## 4. 運作模式設計
+插件未來支援三種模式：
+
+### Mode 1：純連結模式（推薦）
+- 直接回傳 API 音訊網址
+- 不下載
+- 不轉碼
+- 不佔用伺服器資源
+
+### Mode 2：記憶體處理模式
+- 音訊下載至記憶體
+- 不寫入磁盤
+- 可選轉碼後再發送
+
+### Mode 3：轉碼壓縮模式
+- 下載至記憶體
+- 進行音訊壓縮
+- 發送更小的語音訊息
+
+
 
 **當前版本：v1.1.0**
 
@@ -46,12 +103,17 @@
 **API 地址**
 - **描述**：选择你適合的 MetingAPI 或自定义
 - **可选值**：
-  - `https://musicapi.chuyel/api/` - 某人的API 注意⚠️此Meting不保證有ㄒㄧㄤˋ
-  - `custom` - 自定义 API
-- **默认**：`https://musicapi.chuyel/api/`
 
-**MetingAPI** 由於此分支項目屬於個人使用範疇
-API還請自己處理 這裡就不再包含API預設了
+  - `https://musicapi.chuyel.top/meting/` - 初叶🍂竹叶 Furry API（带QQ音乐/网易云会员）
+  - `https://metingapi.nanorocky.top/` - 呆呆酪灰的 MetingAPI
+  - `https://musicapi.chuyel/api/` - 這個應該也是初叶的 但應該是免費版本的大概
+  - `custom` - 自定义 API 你自己架的MetingAPI或指向某人架的
+    
+- **默认**：`https://musicapi.chuyel.top/meting/`
+
+**MetingAPI** 以上可選值API 不保證會一直有效
+若未來 某API停用了停運了 還請自己更替到自定義API 也就是要嗎指向你自己架的MetingAPI
+
 
 **API 类型**（仅在 API 地址为 custom 时生效）
 - **描述**：选择 MetingAPI 的类型
@@ -271,4 +333,10 @@ MIT License
 
 ## 支持
 
-如有问题或建议，欢迎加入 初叶🍂Furry 插件反馈QQ群：535563643（必点Star）
+此分支不屬於原分支修改範疇 已屬於獨立分支 後續維護反饋修改
+
+你可以選擇開 Issue 和 Pull Request！
+
+或者直接到[Discord群]("https://discord.gg/jud4UE6wuq")反饋
+
+
